@@ -6,15 +6,17 @@
 <html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if !(IE 7) | !(IE 8) ]><!-->
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> style="margin-top: 0px !important;">
 <!--<![endif]-->
     <head>
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
+       
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width">
+        
+         <title><?php wp_title( '|', true, 'right' ); ?></title>
         <link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-        <link href="style.css" rel="stylesheet" />
+        <link href="<?php echo get_stylesheet_uri(); ?>" rel="stylesheet" />
         <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
@@ -23,11 +25,11 @@
     <body id="body">
         <div id="head-wrap">
         <div id="header" class="container">
-            <h1>Alliance for Northwest Jobs & Exports</h1>
+            <a href="<?php bloginfo('url')?>"><h1>Alliance for Northwest Jobs & Exports</h1></a>
             <h2 class="head-desc">Will we bring thousands of new jobs here or will we let them pass us by?</h2>
         </div>
             <div id="slide-show" class="container">
-                <img src="assets/images/slide-image.PNG" class="img-responsive" />
+                <img src="<?php echo get_template_directory_uri();?>/assets/images/slide-image.PNG" class="img-responsive" />
             </div><!--End of slide-show div-->
             <div id="nav-wrapper">
                 <nav id="nav-wrap">
@@ -35,7 +37,7 @@
                      <?php wp_nav_menu( array(
                                 'container'=>'',
 				'theme_location' =>'primary',
-                                'menu' => 'Primary Main',
+                                'menu' => 'main menu',
 				'menu_class'=>'links',
 				)); ?>
                     <ul class="social-links">

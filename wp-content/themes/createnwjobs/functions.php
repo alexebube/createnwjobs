@@ -42,3 +42,71 @@ function createnwjobs_setup() {
 	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop
 }
 add_action( 'after_setup_theme', 'createnwjobs_setup' );
+
+function createnwjobs_widgets_init() {
+	register_sidebar( array(
+		'name' => __( 'Right Widget', 'createnwjobs' ),
+		'id' => 'sidebar-1',
+		'description' => __( 'Appears on posts and pages', 'createnwjobs' ),
+		'before_widget' => '<div class="block block-page">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	) );
+        register_sidebar( array(
+		'name' => __( 'Right Front Widget', 'createnwjobs' ),
+		'id' => 'sidebar-2',
+		'description' => __( 'Appears on right front page', 'createnwjobs' ),
+		'before_widget' => '<div class="block">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Left Front Widget', 'createnwjobs' ),
+		'id' => 'sidebar-3',
+		'description' => __( 'Appears on left front page', 'createnwjobs' ),
+		'before_widget' => '<div class="main-widget1">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'createnwjobs_widgets_init' );
+
+/**
+ * Removes div from wp_page_menu() and replace with ul.
+*/
+function responsive_wp_page_menu ($page_markup) {
+    preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $matches);
+        $divclass = $matches[1];
+        $replace = array('<div class="'.$divclass.'">', '</div>');
+        $new_markup = str_replace($replace, '', $page_markup);
+        $new_markup = preg_replace('/^<ul>/i', '<ul class="'.$divclass.'">', $new_markup);
+        return $new_markup; }
+
+add_filter('wp_page_menu', 'responsive_wp_page_menu');
+
+/**
+ * Replace various active menu class names with "active" or nothing
+ *
+ */
+function roots_wp_nav_menu($text) {
+  $replace = array(
+    'sub-menu'     => '',
+	'menu-item'  => '',
+	'menu-item-type-post_type'  => '',
+	'menu-item-object-page'  => '',
+	'menu-item-13'  => '',
+	'menu-item-type-custom' => '',
+	'menu-item-object-custom' => '',
+	'current-menu-item'=> '',
+	'current_page_item' => '',
+	'menu-item-home menu-item-11'=> ''
+  );
+
+  $text = str_replace(array_keys($replace), $replace, $text);
+  return $text;
+}
+add_filter('wp_nav_menu', 'roots_wp_nav_menu');
