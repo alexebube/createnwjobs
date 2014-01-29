@@ -21,8 +21,13 @@
 	<![endif]-->
         <?php wp_head(); ?>
     </head>
-    <body class="body1">
-        <div id="head-wrap" class="head-wrap1">
+    <?php $p = 105; if(is_page($p)){?>
+        <body id="body">
+         <div id="head-wrap" class="head-wrap2">
+    <?php }  else { ?>
+       <body class="body1">  
+       <div id="head-wrap" class="head-wrap1">
+     <?php }?>
         <div id="header" class="container">
            <a href="<?php bloginfo('url')?>"><h1>Alliance for Northwest Jobs & Exports</h1></a>
            <?php global $post;
@@ -42,10 +47,10 @@
 				'menu_class'=>'links',
 				)); ?>
                     <ul class="social-links">
-				<li class="facebook"><a href="#">Facebook</a></li>
-				<li class="twitter"><a href="#">Twitter</a></li>
-				<li class="youtube-black"><a href="#">Youtube</a></li>
-				<li class="google-plus"><a href="#" rel="publisher">Google+</a></li>
+				<li class="facebook"><a href="https://www.facebook.com/AllianceForNorthwestJobsExports">Facebook</a></li>
+				<li class="twitter"><a href="https://twitter.com/CreateNWJobs">Twitter</a></li>
+				<li class="youtube-black"><a href="http://www.youtube.com/user/CreateNWJobs">Youtube</a></li>
+				<li class="google-plus"><a href="https://plus.google.com/107279081421460266821" rel="publisher">Google+</a></li>
 			</ul>
                 </nav><!--End of nav-wrap nav-->
             </div><!--End of nav-wrapper div-->
@@ -55,27 +60,27 @@
                         global $post;
                         $id = $post->ID; 
                         $args = array('child_of' => $id);
+                        global $children;
                         $children = get_pages($args);
-                        if ($children){ ?>
-                <div class="col-md-8"> 
-                    <img src="/assets/images/slide-image.PNG" class="img-responsive" />
-                </div>
-                <div class="col-md-4">
-                    
-                    <ul class="secondary-nav">
-                        
-                        <?php  
-                            echo "<li class='selected'><a href='".get_page_link( $id)."'>".$post->post_title."</a></li>" ;
-                         foreach ( $children as $page ) {        
-                            echo  "<li><a href='".get_page_link( $page->ID )."'>".$page->post_title."</a></li>";
-                         }
-                         ?>	
-                    </ul>   
-                </div>
+                        if ($children || $post->post_parent){ ?>
+                            <div class="col-md-8"> 
+                                <img src="http://createnwjobs.wp.com/wp-content/uploads/2012/08/workers-planning-car.jpg" />
+                            </div>
+                            <div class="col-md-4">  
+                                <ul class="secondary-nav">
+
+                                    <?php 
+                                        echo "<li class='selected'><a href='".get_page_link( $id)."'>".$post->post_title."</a></li>" ;
+                                     foreach ( $children as $page ) {        
+                                        echo  "<li><a href='".get_page_link( $page->ID )."'>".$page->post_title."</a></li>";
+                                     }
+                                     ?>	
+                                </ul>   
+                            </div>
                         <?php } else { ?>      
                         <div class="col-md-12"> 
-                    <img src="/assets/images/slide-image.PNG" class="img-responsive" />
-                </div>
-                    <?php } ?>      
+                            <img src="/assets/images/slide-image.PNG" class="img-responsive" />
+                        </div>
+                        <?php } ?>      
             </div><!--End of slide-show div-->           
     </div><!--End of head-wrap div-->

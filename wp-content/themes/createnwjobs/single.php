@@ -14,6 +14,10 @@ get_header('single'); ?>
             <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
             <?php dynamic_sidebar( 'sidebar-1' ); ?>
             <?php endif; ?> 
+            <div class="block block-page">
+                <h2>Get the Facts</h2>
+                <?php if(function_exists('shs_slider_view')){ shs_slider_view(); } ?>
+                </div>
         </div>
         </div><!--End of main-content1 div-->
 

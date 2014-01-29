@@ -29,7 +29,8 @@
             <h2 class="head-desc">Will we bring thousands of new jobs here or will we let them pass us by?</h2>
         </div>
             <div id="slide-show" class="container">
-                <img src="<?php echo get_template_directory_uri();?>/assets/images/slide-image.PNG" class="img-responsive" />
+                <!--<img src="<?php echo get_template_directory_uri();?>/assets/images/slide-image.PNG" class="img-responsive" />-->
+                      <?php echo do_shortcode("[metaslider id=479]"); ?>
             </div><!--End of slide-show div-->
             <div id="nav-wrapper">
                 <nav id="nav-wrap">
@@ -41,10 +42,10 @@
 				'menu_class'=>'links',
 				)); ?>
                     <ul class="social-links">
-				<li class="facebook"><a href="#">Facebook</a></li>
-				<li class="twitter"><a href="#">Twitter</a></li>
-				<li class="youtube-black"><a href="#">Youtube</a></li>
-				<li class="google-plus"><a href="#" rel="publisher">Google+</a></li>
+				<li class="facebook"><a href="https://www.facebook.com/AllianceForNorthwestJobsExports">Facebook</a></li>
+				<li class="twitter"><a href="https://twitter.com/CreateNWJobs">Twitter</a></li>
+				<li class="youtube-black"><a href="http://www.youtube.com/user/CreateNWJobs">Youtube</a></li>
+				<li class="google-plus"><a href="https://plus.google.com/107279081421460266821" rel="publisher">Google+</a></li>
 			</ul>
 
                 </nav><!--End of nav-wrap nav-->

@@ -16,6 +16,7 @@
  */
 html {
 margin-top: 0 !important;
+ font-family: "Open Sans",sans-serif;
 }
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
@@ -59,13 +60,15 @@ a {
     color: #446F9C;
     text-decoration: none;
 }
+.latest-news {
+   color: #525252 !important;
+   font-size: 14px !important;
+}
 .col-md-8 h2 { 
     color: #446F9C ;
-    font-size: 18px !important;
+    font-size: 18px;
 }
-.latest-news {
-   color: #525252 !important; 
-}
+
 /**
  * 2.0 Basic Structure
  * -----------------------------------------------------------------------------
@@ -100,6 +103,7 @@ a {
 
 #head-wrap {background: url("../images/boat-hills.jpg") no-repeat scroll 50% 0 #9FA9BA;}
 .head-wrap1 {background: url("../images/dock-trees.jpg") no-repeat scroll 50% 0 #9FA9BA !important; height: 500px !important;}
+.head-wrap2 {background: url("../images/dock-trees.jpg") no-repeat scroll 50% 0 #9FA9BA !important; height: 526px !important;}
 
 #header h1 {
     background:url("../images/logo.png");
@@ -154,10 +158,22 @@ a {
 
 .bg {
     background: #e3e3e3;
-    min-height: 85%;
+    min-height: 80%;
 }
-.bg .col-md-9{
+.bg .col-md-8{
     padding-left: 0px;
+    margin: 0px;
+}
+.bg .col-md-4{
+    padding-left: 40px;
+}
+.bg .col-md-8 img{
+    min-height: 100%;
+    min-width: 100%;
+    max-height: 100%;
+}
+.bg2{
+    background: #ffffff;
 }
 /**
  * 4.0 Navigation
@@ -265,7 +281,7 @@ li.current- a {
 }
 .secondary-nav li a{
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
 }
 #main-content1, #main-content2, #main-content3{
     overflow: hidden;
@@ -477,4 +493,101 @@ h2 {
     background-position: 0 -69px;
     height: 16px;
     width: 16px;
+}
+
+/**
+ * 3.0 Slider
+* ---------------------------------------------------------
+ */
+.nivo-caption {
+    background: none repeat scroll 0 0 #436388 !important;
+    color: #FFFFFF !important;
+    padding:10px !important;
+    width: 33% !important;
+    opacity: 1 !important;
+    margin-bottom: 20px !important;
+    margin-left: 25px !important
+    text-align: left !important;
+}
+.caption-wrap {
+    background: none repeat scroll 0 0 #436388 !important;
+    color: #FFFFFF !important;
+    padding:10px !important;
+    width: 33% !important;
+    opacity: 1 !important;
+    margin-bottom: 20px !important;
+    margin-left: 25px !important
+    text-align: left !important;
+    left: 20px !important;
+}
+.caption-head {
+    font-size: 30px;
+    font-weight: bold;
+}
+a.shtml_wpf_ref {
+    visibility: hidden !important;
+}
+.section-header {
+    color: #66A2C7;
+    font-family: "Open Sans",sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+.super-header {
+    background: none repeat scroll 0 0 #446F9C;
+    color: #FFFFFF;
+    font-family: "Open Sans",sans-serif;
+    font-size: 60px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 60px;
+    margin: 20px 0;
+    padding: 20px 30px;
+    text-transform: uppercase;
+}
+.take-action{
+    font-size: 22px;
+    color: #446F9C;
+    line-height: 29px;
+    font-weight: 700;
+    font-family: "Open Sans",sans-serif;
+}
+.callout {
+    background-color: #E0E0E0;
+    border: 1px solid #446F9C;
+    padding: 25px;
+    text-align: center;
+}
+
+
+.head {
+    color: #66A2C7;
+    font-family: "Open Sans",sans-serif;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 38px;
+    margin: 0 0 10px;
+}
+ul {
+    list-style: none outside none;
+    padding: 0 0 0 40px;
+}
+
+#main-content li:before, #main-content2 li:before, #main-content3 li:before{
+    color: #66A2C7;
+    content: "■";
+    font-family: arial,helvetica,sans-serif;
+    font-size: 30px;
+    left: -30px;
+    line-height: 30px;
+    position: absolute;
+    top: -6px;
+}
+#main-content3  li {
+    margin: 10px 0;
+    position: relative;
 }
